@@ -1,9 +1,7 @@
-import logo from './assets/logo.png'; // Reemplaza por la ruta de tu imagen de logo
-
 function Header() {
   return (
     <header>
-      <img src={logo} alt="Little Lemon Logo" />
+      <img src={process.env.PUBLIC_URL + '/logo.png'} alt="Little Lemon Logo" />
     </header>
   );
 }
