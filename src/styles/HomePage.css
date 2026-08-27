@@ -1,0 +1,183 @@
+/* src/styles/HomePage.css */
+.homepage {
+  width: 100%;        /* ← Debe ser 100% */
+  margin: 0;
+  padding: 0;
+}
+
+.homepage section {
+  width: 100%;        /* ← Importante: la sección debe ser 100% */
+  margin: 0;
+  padding: 0;
+}
+/* Estilos para el contenedor de cada sección */
+.section-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+/* Animación de entrada para las secciones */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.homepage section {
+  animation: fadeInUp 0.6s ease-out forwards;
+}
+
+.homepage section:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.homepage section:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+.homepage section:nth-child(4) {
+  animation-delay: 0.6s;
+}
+
+/* Estilos para el título de cada sección */
+.section-title {
+  text-align: center;
+  font-size: 2.5rem;
+  color: #333333;
+  margin-bottom: 2rem;
+  font-weight: 600;
+  position: relative;
+}
+
+.section-title::after {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 4px;
+  background-color: #f4ce14;
+  margin: 0.5rem auto 0;
+  border-radius: 2px;
+}
+
+/* Espaciado entre secciones */
+.homepage section + section {
+  margin-top: 0;
+}
+
+/* Estilos para cuando no hay contenido */
+.homepage .empty-state {
+  text-align: center;
+  padding: 4rem 2rem;
+  color: #495e57;
+}
+
+.homepage .empty-state h2 {
+  font-size: 2rem;
+  color: #333333;
+  margin-bottom: 1rem;
+}
+
+/* Mejoras de accesibilidad */
+.homepage section:focus-visible {
+  outline: 2px solid #f4ce14;
+  outline-offset: 2px;
+}
+
+/* Estilos para pantallas de carga */
+.homepage .loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 400px;
+  font-size: 1.2rem;
+  color: #495e57;
+}
+
+/* Estilos para errores */
+.homepage .error {
+  text-align: center;
+  padding: 4rem 2rem;
+  color: #d32f2f;
+}
+
+.homepage .error h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .homepage section {
+    scroll-margin-top: 60px;
+  }
+  
+  .section-title {
+    font-size: 2rem;
+  }
+  
+  .section-container {
+    padding: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .homepage section {
+    scroll-margin-top: 50px;
+  }
+  
+  .section-title {
+    font-size: 1.8rem;
+  }
+  
+  .section-title::after {
+    width: 40px;
+  }
+}
+
+/* Estilos para impresión */
+@media print {
+  .homepage section {
+    animation: none;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+  
+  .homepage section + section {
+    page-break-before: avoid;
+  }
+}
+
+/* Modo oscuro (opcional) */
+@media (prefers-color-scheme: dark) {
+  .homepage {
+    background-color: #1a1a1a;
+  }
+  
+  .section-title {
+    color: #ffffff;
+  }
+  
+  .homepage .empty-state h2 {
+    color: #ffffff;
+  }
+  
+  .homepage .empty-state {
+    color: #b0b0b0;
+  }
+}
+
+/* Scroll suave para toda la página */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Estilos para el footer dentro de la página */
+.homepage .footer {
+  margin-top: auto;
+}

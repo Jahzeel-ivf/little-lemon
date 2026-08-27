@@ -1,0 +1,19 @@
+/* src/styles/Header.css */
+.header {
+  background-color: #ffffff;
+  padding: 1rem 1rem;
+  border-bottom: 2px solid #edefee;
+}
+
+.header-content {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.logo {
+  height: 60px;
+  width: auto;
+}
