@@ -1,0 +1,84 @@
+/* src/styles/BookingPage.css */
+.booking-page {
+  max-width: 1000px;
+  margin: 0 auto;
+  min-height: 80vh;
+}
+
+.booking-header {
+  text-align: center;
+  margin-bottom: 2.5rem; 
+}
+
+.booking-header h1 {
+  color: #333333;
+  font-size: 3rem;
+  margin-bottom: 0.5rem;
+  font-weight: 700;
+}
+
+.booking-header h1::after {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 4px;
+  background-color: #f4ce14;
+  margin: 0.5rem auto 0;
+  border-radius: 2px;
+}
+
+.booking-header p {
+  color: #495e57;
+  font-size: 1.1rem;
+  margin-top: 0.5rem;
+}
+
+.booking-info {
+  margin-top: 2.5rem;
+  padding: 1.5rem 2rem;
+  background-color: #edefee;
+  border-radius: 16px;
+  text-align: center;
+  max-width: 750px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.booking-info h3 {
+  color: #333333;
+  margin-bottom: 0.5rem;
+}
+
+.booking-info ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.booking-info ul li {
+  color: #495e57;
+  padding: 0.25rem 0;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .booking-page {
+    padding: 2rem 1rem;
+  }
+  .booking-header h1 {
+    font-size: 2.2rem;
+  }
+  .booking-info {
+    max-width: 100%;
+    padding: 1.25rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .booking-page {
+    padding: 1.5rem 0.5rem;
+  }
+  .booking-header h1 {
+    font-size: 1.8rem;
+  }
+}

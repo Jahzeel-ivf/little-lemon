@@ -1,0 +1,131 @@
+/* src/styles/BookingForm.css */
+.booking-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 0;
+  background: transparent;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+.booking-form h2 {
+  text-align: center;
+  color: #333333;
+  font-size: 2.2rem;
+  margin: 0 0 1rem 0;
+  font-weight: 700;
+  background: #ffffff;
+  padding: 1.5rem;
+  border-radius: 20px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+}
+
+.booking-form .card {
+  background: #ffffff;
+  padding: 1.5rem;
+  border-radius: 20px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  border: 1px solid #f0f0f0;
+}
+
+.booking-form .card-title {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #999999;
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.form-group label {
+  font-weight: 500;
+  color: #333333;
+  font-size: 0.9rem;
+}
+
+.form-group input,
+.form-group select {
+  padding: 0.8rem 1rem;
+  border: 2px solid #edefee;
+  border-radius: 12px;
+  font-size: 1rem;
+  font-family: inherit;
+  transition: all 0.3s ease;
+  background-color: #fafafa;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+  outline: none;
+  border-color: #f4ce14;
+  background-color: #ffffff;
+  box-shadow: 0 0 0 4px rgba(244, 206, 20, 0.08);
+}
+
+.hint {
+  color: #495e57;
+  font-size: 0.75rem;
+  margin-top: 0.25rem;
+}
+
+.success-message {
+  background: #e8f5e9;
+  border: 2px solid #4caf50;
+  border-radius: 12px;
+  padding: 1rem 1.5rem;
+  text-align: center;
+  color: #2e7d32;
+  font-weight: 500;
+  animation: slideIn 0.5s ease;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateY(-20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.submit-btn {
+  background: linear-gradient(135deg, #f4ce14, #e5bc0f);
+  color: #333333;
+  border: none;
+  padding: 1rem 2rem;
+  font-size: 1.1rem;
+  font-weight: bold;
+  border-radius: 14px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 0.5rem;
+  box-shadow: 0 4px 16px rgba(244, 206, 20, 0.25);
+}
+
+.submit-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 24px rgba(244, 206, 20, 0.35);
+}
+
+/* Responsive */
+@media (max-width: 640px) {
+  .booking-form h2 {
+    font-size: 1.5rem;
+    padding: 1rem;
+  }
+  
+  .booking-form .card {
+    padding: 1rem;
+  }
+}

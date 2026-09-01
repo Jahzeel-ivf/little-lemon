@@ -22,6 +22,4 @@ const HomePage = () => {
     </>
   );
 };
-
-// ✅ Asegúrate de tener esto
 export default HomePage;

@@ -35,14 +35,16 @@ const Specials = () => {
           Online Menu
         </button>
       </header>
-      
       <div className="specials-grid">
         {specialsData.map((special) => (
           <article key={special.id} className="special-card">
-            <img 
-              src={special.image} 
-              alt={special.title} 
-            />
+            {/* ✅ AGREGAR EL CONTENEDOR .special-image */}
+            <div className="special-image">
+              <img
+                src={special.image} 
+                alt={special.title} 
+              />
+            </div>
             <div className="special-content">
               <hgroup className="special-title">
                 <h3>{special.title}</h3>

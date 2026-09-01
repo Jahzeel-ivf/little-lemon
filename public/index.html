@@ -2,24 +2,55 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <link rel="icon" href="%PUBLIC_URL%/little-lemon.png" />
+    <link rel="icon" href="/little-lemon.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#000000" />
-    <meta
-      name="description"
-      content="Web site created using create-react-app"
-    />
     <link rel="apple-touch-icon" href="logo.png" />
-    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+
     <title>Little Lemon</title>
+
+    <!-- Meta descripción unificada -->
     <meta name="description" content="Little Lemon is a family-owned restaurant specializing in authentic Italian cuisine." />
-    <meta name="og:title" content="Little Lemon - Authentic Italian Cuisine" />
-    <meta name="og:description" content="Experience the taste of Italy at Little Lemon, where we serve traditional Italian dishes made with fresh ingredients." />
-    <meta name="og:image" content="%PUBLIC_URL%/logo.png" />
-    <meta name="og:url" content="https://www.littlelemon.com" />
+
+    <!-- Metaetiquetas Open Graph corregidas (property en vez de name) -->
+    <meta property="og:title" content="Little Lemon - Authentic Italian Cuisine" />
+    <meta property="og:description" content="Experience the taste of Italy at Little Lemon, where we serve traditional Italian dishes made with fresh ingredients." />
+    <meta property="og:image" content="/logo.png" />
+    <meta property="og:url" content="https://www.littlelemon.com" />
+
+    <!-- API de Coursera -->
+    <script src="https://cdn.jsdelivr.net/gh/courseraap/capstone@main/api.js"></script>
+    <script>
+      // Fallback local por si la API externa no carga
+      if (typeof window.fetchAPI !== 'function') {
+        const seededRandom = function (seed) {
+          var m = 2**35 - 31;
+          var a = 185852;
+          var s = seed % m;
+          return function () {
+            return (s = s * a % m) / m;
+          };
+        };
+
+        window.fetchAPI = function(date) {
+          let result = [];
+          let random = seededRandom(date.getDate());
+          for(let i = 17; i <= 23; i++) {
+            if(random() < 0.5) result.push(i + ':00');
+            if(random() < 0.5) result.push(i + ':30');
+          }
+          return result;
+        };
+
+        window.submitAPI = function(formData) {
+          return true;
+        };
+      }
+    </script>
+
+    <script defer src="/static/js/bundle.js"></script>
   </head>
   <body>
-    <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
   </body>
 </html>
