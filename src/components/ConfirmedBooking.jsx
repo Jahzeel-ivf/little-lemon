@@ -1,27 +1,36 @@
-// src/components/ConfirmedBooking.jsx
-import React from 'react';
 import { Link } from 'react-router-dom';
 import '../styles/ConfirmedBooking.css';
 
 const ConfirmedBooking = () => {
   return (
-    <div className="confirmed-booking">
-      <div className="confirmed-card">
-        <div className="checkmark">✅</div>
-        <h1>¡Reserva Confirmada!</h1>
-        <p>Tu mesa ha sido reservada exitosamente en Little Lemon.</p>
+    <section
+      className="confirmed-booking"
+      role="main"
+      aria-label="Booking confirmation page"
+    >
+      <article
+        className="confirmed-card"
+        role="alert"
+        aria-live="polite"
+      >
+        <h1>Booking Confirmed!</h1>
+        <p>Your table has been successfully reserved at Little Lemon.</p>
         <div className="confirmation-detail">
           <p>
-            <strong>Te esperamos en nuestro restaurante.</strong>
+            <strong>We look forward to welcoming you!</strong>
             <br />
-            <small>Un correo de confirmación ha sido enviado a tu correo electrónico.</small>
+            <small>A confirmation email has been sent to your email address.</small>
           </p>
         </div>
-        <Link to="/" className="home-link">
-          Volver al inicio
+        <Link
+          to="/"
+          className="home-link"
+          aria-label="Return to home page - On Click"
+        >
+          Return to Home
         </Link>
-      </div>
-    </div>
+      </article>
+    </section>
   );
 };
 

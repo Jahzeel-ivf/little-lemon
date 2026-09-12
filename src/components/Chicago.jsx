@@ -1,27 +1,27 @@
-// src/components/Chicago.jsx
-import React from 'react';
 import '../styles/Chicago.css';
 
 const Chicago = () => {
   return (
-    <section className="chicago-section">
-      <article className="chicago-content">
+    <section className="chicago-section"  aria-label="About Little Lemon Chicago">
+      <article className="chicago-content"  aria-label="Restaurant story">
         <h2>Little Lemon</h2>
         <h3>Chicago</h3>
         <p>
-          Founded in 2010, Little Lemon has been serving the Chicago community
-          with authentic Mediterranean cuisine. Our family-owned restaurant
-          combines traditional recipes with a modern twist, using only the
-          freshest ingredients sourced from local farmers.
+          Little Lemon is a charming neighborhood bistro thatserves simple food and classic cocktails in a lively but casual environment.
         </p>
         <p>
-          Our passion for food and commitment to quality has made us one of
-          Chicago's most beloved dining destinations.
+        The restaurant features a locally-sourced menu with daily specials.
         </p>
       </article>
-      <div className="chicago-images">
-        <img src="restaurant_inside.webp" alt="Restaurant interior" />
-        <img src="/restaurant.jpg" alt="Restaurant exterior" />
+      <div className="chicago-images" role="group" aria-label="Restaurant images">
+        <img
+          src="restaurant chef B.jpg"
+          alt="Little Lemon restaurant chef"
+        />
+        <img
+          src="/restaurant.jpg"
+          alt="Little Lemon restaurant exterior"
+        />
       </div>
     </section>
   );

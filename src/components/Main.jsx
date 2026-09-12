@@ -1,7 +1,5 @@
-// src/components/Main.jsx
 import React, { useReducer, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
-import { fetchAPI, submitAPI } from '../api.js'; // <-- Importar desde api.js
+import { useNavigate, Routes } from 'react-router-dom';
 import '../styles/Main.css';
 
 const seededRandom = function (seed) {
@@ -23,14 +21,11 @@ const fetchAPIFallback = function(date) {
   return result;
 };
 
-// Función para obtener horarios (usa fetchAPI del wrapper)
 const getFetchAPI = (date) => {
-  try {
-    return fetchAPI(date);
-  } catch (error) {
-    console.warn('Error usando fetchAPI, usando fallback:', error);
-    return fetchAPIFallback(date);
+  if (typeof window.fetchAPI === 'function') {
+    return window.fetchAPI(date);
   }
+  return fetchAPIFallback(date);
 };
 
 export const initializeTimes = () => {
@@ -72,38 +67,60 @@ const Main = ({ children }) => {
     });
   };
 
-  // Función para enviar el formulario
   const submitForm = (formData) => {
     try {
-      const success = submitAPI(formData);
-      
+      const success = window.submitAPI(formData);
       if (success) {
         navigate('/confirmed');
       } else {
-        alert('Hubo un error al procesar la reserva. Por favor, intenta de nuevo.');
+        alert('There was an error processing your reservation. Please try again.');
       }
     } catch (error) {
-      console.error('Error al enviar la reserva:', error);
-      alert('Ocurrió un error inesperado. Por favor, intenta de nuevo.');
+      console.error('Error submitting reservation:', error);
+      alert('An unexpected error occurred. Please try again.');
     }
   };
 
   return (
-    <main className="main-content">
-      {React.Children.map(children, (child) => {
-        if (React.isValidElement(child)) {
-          return React.cloneElement(child, {
-            availableTimes,
-            updateTimesForDate,
-            date,
-            time,
-            setTime,
-            setDate,
-            submitForm,
-          });
-        }
-        return child;
-      })}
+    <main className="main-content" role="main" aria-label="Main content">
+      <div className="container">
+        {React.Children.map(children, (child) => {
+          if (React.isValidElement(child)) {
+            if (child.type === Routes) {
+              const routesChildren = React.Children.map(child.props.children, (route) => {
+                if (React.isValidElement(route) && route.props.element) {
+                  const elementWithProps = React.cloneElement(route.props.element, {
+                    availableTimes,
+                    updateTimesForDate,
+                    date,
+                    time,
+                    setTime,
+                    setDate,
+                    submitForm,
+                  });
+                  return React.cloneElement(route, {
+                    element: elementWithProps,
+                  });
+                }
+                return route;
+              });
+              return React.cloneElement(child, {
+                children: routesChildren,
+              });
+            }
+            return React.cloneElement(child, {
+              availableTimes,
+              updateTimesForDate,
+              date,
+              time,
+              setTime,
+              setDate,
+              submitForm,
+            });
+          }
+          return child;
+        })}
+      </div>
     </main>
   );
 };

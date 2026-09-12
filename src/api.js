@@ -16,8 +16,7 @@ export const fetchAPI = (date) => {
   if (typeof window.fetchAPI === 'function') {
     return window.fetchAPI(date);
   }
-  
-  // Fallback local (por si acaso)
+
   console.warn('window.fetchAPI no está disponible, usando fallback');
   const seededRandom = (seed) => {
     const m = 2**35 - 31;
@@ -25,7 +24,6 @@ export const fetchAPI = (date) => {
     let s = seed % m;
     return () => (s = (s * a) % m) / m;
   };
-  
   const result = [];
   const random = seededRandom(date.getDate());
   for (let i = 17; i <= 23; i++) {

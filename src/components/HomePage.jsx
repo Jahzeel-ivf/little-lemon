@@ -8,18 +8,19 @@ import '../styles/HomePage.css';
 const HomePage = () => {
   return (
     <>
-      <section aria-label="Weekly Specials">
+      <section id="menu" aria-label="Weekly Specials">
         <Specials />
       </section>
 
-      <section aria-label="Customer Testimonials">
+      <section  aria-label="Customer Testimonials">
         <CustomersSay />
       </section>
 
-      <section aria-label="About Little Lemon Chicago">
+      <section id="about" aria-label="About Little Lemon Chicago">
         <Chicago />
       </section>
     </>
   );
 };
+
 export default HomePage;

@@ -1,4 +1,3 @@
-// src/components/__tests__/BookingForm.test.jsx
 import React from 'react';
 import { render, screen } from '@testing-library/react';
 import BookingForm from '../BookingForm';

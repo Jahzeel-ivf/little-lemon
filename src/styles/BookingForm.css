@@ -1,14 +1,15 @@
-/* src/styles/BookingForm.css */
 .booking-form {
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
   max-width: 700px;
   margin: 0 auto;
-  padding: 0;
+  padding: 2rem 1rem 1rem 1rem;
   background: transparent;
   border-radius: 0;
   box-shadow: none;
+  background-color: #edefee;
+  border-radius: 20px;
 }
 
 .booking-form h2 {
@@ -124,7 +125,6 @@
     font-size: 1.5rem;
     padding: 1rem;
   }
-  
   .booking-form .card {
     padding: 1rem;
   }

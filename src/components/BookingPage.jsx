@@ -1,11 +1,9 @@
-// src/components/BookingPage.jsx
-import React from 'react';
 import BookingForm from './BookingForm.jsx';
 import '../styles/BookingPage.css';
 
 const BookingPage = (props) => {
   return (
-    <section className="booking-page">
+    <section className="booking-page" role="main" aria-label="Reservation page">
       <div className="booking-header">
         <h1>Reserve a Table</h1>
         <p>Book your table at Little Lemon Chicago</p>

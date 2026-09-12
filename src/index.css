@@ -4,16 +4,36 @@
   padding: 0;
 }
 
+html,
 body {
-  font-family: 'Inter', 'Roboto', sans-serif;
-  color: #333333;
-  background-color: #ffffff;
-
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  width: 100%;
+  max-width: 100%;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body {
+  font-family: 'Karla', sans-serif;
+  color: #4b4a4a;
+  background-color: #ffffff;
+  min-height: 100vh;
+}
+
+#root {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+h1,h2,h3,
+.display-text {
+  font-family: 'Markazi Text', serif;
+}
+
+p {
+  font-size: 1rem;
+  line-height: 1.5;
+  max-width: 65ch;
 }

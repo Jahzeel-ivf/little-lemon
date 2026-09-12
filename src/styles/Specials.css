@@ -1,4 +1,3 @@
-/* src/styles/Specials.css */
 .specials {
   padding: 4rem 2rem;
   background-color: #ffffff;
@@ -140,12 +139,11 @@
   transform: translateX(5px);
 }
 
-/* Responsive */
 @media (max-width: 968px) {
   .specials-grid {
     grid-template-columns: repeat(2, 1fr);
   }
-  
+
   .specials-header h2 {
     font-size: 2rem;
   }
@@ -156,26 +154,26 @@
     padding: 2rem 1rem;
     margin: 0 1rem;
   }
-  
+
   .specials-grid {
     grid-template-columns: 1fr;
     gap: 1.5rem;
   }
-  
+
   .specials-header {
     flex-direction: column;
     align-items: flex-start;
   }
-  
+
   .specials-header h2 {
     font-size: 1.8rem;
   }
-  
+
   .menu-btn {
     width: 100%;
     text-align: center;
   }
-  
+
   .special-image {
     height: 180px;
   }

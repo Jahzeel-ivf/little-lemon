@@ -1,5 +1,3 @@
-// src/components/CustomersSay.jsx
-import React from 'react';
 import '../styles/CustomersSay.css';
 
 const CustomersSay = () => {
@@ -28,15 +26,23 @@ const CustomersSay = () => {
   ];
 
   return (
-    <section className="testimonials">
+    <section className="testimonials" aria-label="Customer testimonials">
       <h2>What Our Customers Say</h2>
-      <div className="testimonials-grid">
+      <div className="testimonials-grid" role="list" aria-label="List of customer reviews">
         {customers.map((customer) => (
-          <article key={customer.id} className="testimonial-card">
-            <div className="stars">
+          <article 
+            key={customer.id} 
+            className="testimonial-card"
+            aria-label={`Review by ${customer.name}`}
+          >
+            <div className="stars" aria-label={`Rating: ${customer.rating} out of 5 stars`}>
               {'⭐'.repeat(customer.rating)}
             </div>
-            <img src={customer.image} alt={customer.name} />
+            <img
+              src={customer.image} 
+              alt={customer.name}
+              className="customer-image"
+            />
             <h4>{customer.name}</h4>
             <p>"{customer.comment}"</p>
           </article>

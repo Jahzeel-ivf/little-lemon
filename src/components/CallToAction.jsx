@@ -1,4 +1,3 @@
-// src/components/CallToAction.jsx
 import { useNavigate } from 'react-router-dom';
 import '../styles/CallToAction.css';
 
@@ -10,7 +9,7 @@ const CallToAction = () => {
   };
 
   return (
-    <article className="hero">
+    <article className="hero" aria-label="Hero section - Little Lemon restaurant">
       <div className="hero-content">
         <hgroup>
           <h1>Little Lemon</h1>
@@ -22,13 +21,13 @@ const CallToAction = () => {
         </p>
         <button
           className="cta-button"
-          aria-label="Reserve a table now"
-          onClick={handleReserve}  // ← Manejador de clic
+          aria-label="Reserve a table now - On Click"
+          onClick={handleReserve}
         >
           Reserve a Table
         </button>
       </div>
-      <figure className="hero-image">
+      <figure className="hero-image" role="figure" aria-label="Restaurant food display">
         <img
           src="/restauranfood.jpg"
           alt="Little Lemon restaurant dining area with Mediterranean decor"
